@@ -1,0 +1,32 @@
+<!-- <span name>{{item.name}}</span>
+<span price>${{item.price}}</span>
+<span shortName>{{item.shortName}}</span>
+<span shortName>{{item.shortName}}</span> 
+<span productAjective>{{item.productAjective}}</span> 
+<span productMaterial>{{item.productMaterial}}</span> 
+<span department>{{item.department}}</span> -->
+
+<div class="d-inline-flex justify-content-center  w-100">
+    <span class="badge badge-dark">
+        <ng-content select="[name]"></ng-content>
+    </span>
+    &nbsp;
+    <span class="badge badge-info">
+        <ng-content select="[price]"></ng-content>
+    </span>
+    &nbsp;
+    <span class="badge badge-primary">
+        <ng-content select="[productAjective]"></ng-content>
+    </span>
+    &nbsp;
+    <span class="badge badge-warning">
+        <ng-content select="[productMaterial]"></ng-content>
+    </span>
+    &nbsp;
+    <span class="badge badge-danger">
+        <ng-content select="[department]"></ng-content>
+    </span>
+    
+</div>
+
+

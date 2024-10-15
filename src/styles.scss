@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.app-background-image{
+    background-image: url('../public/images/store.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.app-background-image-cover{
+    background-image: url('../public/images/store.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app-logo-style{
+    // background-image: url('../public/images/logo.png');
+    width: 90px !important;
+    height: 50px !important;
+}
+
+.width-hidden{
+    overflow-x: hidden;
+}
