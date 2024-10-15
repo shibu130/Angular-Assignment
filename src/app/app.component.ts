@@ -14,7 +14,6 @@ export class AppComponent  implements AfterViewInit{
 
   ngAfterViewInit(): void {
     $(function () {
-      debugger
       $('[data-toggle="tooltip"]').tooltip()
     })
     //throw new Error('Method not implemented.');

@@ -33,7 +33,6 @@ export class WelcomeComponent implements OnInit{
     if(!this.checkIfLoggedIn()){
 
       // navigate
-      debugger
       this._router.navigate(["login"]);
 
     }

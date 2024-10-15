@@ -15,6 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { SharedModule } from '../shared/shared.module';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { SharedModule } from '../shared/shared.module';
     MatFormFieldModule,
     MatIconModule,
     ScrollingModule,
-    SharedModule
+    SharedModule,
+    MatProgressSpinnerModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

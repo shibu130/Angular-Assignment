@@ -24,10 +24,10 @@ export class DashboardComponent {
  
   createProductArrayResult(length:number){
 
-    this.isLoading = false;
+    this.isLoading = true;
 
     this.createProductArray(length).subscribe(res=>{
-      this.isLoading = true;
+      this.isLoading = false;
       this.products = this.products.concat(res);
     })
 
@@ -57,7 +57,7 @@ export class DashboardComponent {
 
   logout(){
     sessionStorage.clear()
-    this._router.navigate([""]);
+    this._router.navigate(["login"]);
   }
 
 
@@ -73,8 +73,7 @@ export class DashboardComponent {
    })
 
    modalRef.afterClosed().subscribe(e=>{
-    debugger
-
+    
     let index = this.products.findIndex(res=>res.id == e.id);
 
     this.products[index].name = e.name;

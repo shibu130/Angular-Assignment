@@ -17,7 +17,7 @@ export class ProductComponent {
 
   constructor(private _builder:FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any, ){
 
-    debugger
+    
     this.modalForm = this._builder.group({
 
       id:[this.data.id],
