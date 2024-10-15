@@ -9,7 +9,6 @@ export class DashboardGuard implements CanActivate{
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    
     if(localStorage.getItem("loggedin")){
       return true;
     }
