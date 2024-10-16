@@ -1,10 +1,8 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import {da, faker} from '@faker-js/faker'
-import { debounce, debounceTime, delay } from 'rxjs';
-import { of } from 'rxjs/internal/observable/of';
 import { ProductComponent } from '../../modal/product/product.component';
+import { DashboardService } from '../../service/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +17,7 @@ export class DashboardComponent {
   pageMode:string = "grid";
   numberOfItems = 10;
   
-  constructor(private _router:Router , private _dialog:MatDialog){
+  constructor(private _router:Router , private _dialog:MatDialog, private _dashboardService:DashboardService){
     this.createProductArrayResult(100);
   }
  
@@ -27,7 +25,7 @@ export class DashboardComponent {
 
     this.isLoading = true;
     // decimals are bad 
-    this.createProductArray(Math.floor(length)).subscribe(res=>{
+    this._dashboardService.createProductArray(Math.floor(length)).subscribe(res=>{
       this.isLoading = false;
       this.products = this.products.concat(res);
     })
@@ -35,30 +33,7 @@ export class DashboardComponent {
   }
 
 
-  createProductArray(length:number){
-    // debounce using rxjs 
-    // delay for showing loading spinnner
-    // wondering if the expectation was to use rxjs for debounce or 
-    return of(Array.from({length:length}).map(this.createProductObject)).pipe(debounceTime(2000)).pipe(delay(2000))
-  }
-
-  createProductObject(){
-    
-    return {
-      id: faker.string.uuid(),
-      name: faker.commerce.productName(),
-      description: faker.commerce.productDescription(),
-      price: faker.commerce.price(),
-      department: faker.commerce.department(),
-      shortName:faker.commerce.product(),
-      productAjective:faker.commerce.productAdjective(),
-      productMaterial:faker.commerce.productMaterial(),
-      isbn:faker.commerce.isbn(10)
-      
-    }
-
-  }
-
+ 
   logout(){
     localStorage.clear();
     console.log(localStorage.getItem('loggedin'));
@@ -86,10 +61,6 @@ export class DashboardComponent {
     this.products[index].price = e.price;
 
    })
-
-   
-
-    
   }
 
 
