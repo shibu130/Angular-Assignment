@@ -1,34 +1,40 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ProductComponent } from '../../modal/product/product.component';
 import { DashboardService } from '../../service/dashboard.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent {
+export class DashboardComponent  implements OnDestroy{
 
   products:any[] = []
   isLoading:boolean = false;
   virtualScrollCount:number = 50;
   pageMode:string = "grid";
   numberOfItems = 10;
+  subscribe: Subscription
   
   constructor(private _router:Router , private _dialog:MatDialog, private _dashboardService:DashboardService){
     this.createProductArrayResult(100);
+  }
+
+  ngOnDestroy(): void {
+    this.subscribe.unsubscribe();
   }
  
   createProductArrayResult(length:number){
 
     this.isLoading = true;
     // decimals are bad 
-    this._dashboardService.createProductArray(Math.floor(length)).subscribe(res=>{
-      this.isLoading = false;
-      this.products = this.products.concat(res);
-    })
+    this.subscribe  =   this._dashboardService.createProductArray(Math.floor(length)).subscribe(res=>{
+          this.isLoading = false;
+          this.products = this.products.concat(res);
+        })
 
   }
 
