@@ -2,7 +2,7 @@ import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import {da, faker} from '@faker-js/faker'
-import { delay } from 'rxjs';
+import { debounce, debounceTime, delay } from 'rxjs';
 import { of } from 'rxjs/internal/observable/of';
 import { ProductComponent } from '../../modal/product/product.component';
 
@@ -17,6 +17,7 @@ export class DashboardComponent {
   isLoading:boolean = false;
   virtualScrollCount:number = 50;
   pageMode:string = "grid";
+  numberOfItems = 10;
   
   constructor(private _router:Router , private _dialog:MatDialog){
     this.createProductArrayResult(100);
@@ -25,8 +26,8 @@ export class DashboardComponent {
   createProductArrayResult(length:number){
 
     this.isLoading = true;
-
-    this.createProductArray(length).subscribe(res=>{
+    // decimals are bad 
+    this.createProductArray(Math.floor(length)).subscribe(res=>{
       this.isLoading = false;
       this.products = this.products.concat(res);
     })
@@ -35,7 +36,10 @@ export class DashboardComponent {
 
 
   createProductArray(length:number){
-    return of(Array.from({length:length}).map(this.createProductObject)).pipe(delay(2000))
+    // debounce using rxjs 
+    // delay for showing loading spinnner
+    // wondering if the expectation was to use rxjs for debounce or 
+    return of(Array.from({length:length}).map(this.createProductObject)).pipe(debounceTime(2000)).pipe(delay(2000))
   }
 
   createProductObject(){

@@ -3,7 +3,19 @@
         <a class="navbar-brand ml-2">
           <img src="images/logo.png" class="app-logo">
         </a>
-        <form class="form-inline mr-2">
+        <form #myForm="ngForm" (ngSubmit)="createProductArrayResult(numberOfItems)" class="form-inline mr-2">
+          <!-- 2000 ms debounce -->
+           <div class="input-group">
+              <div class="input-group-prepend">
+                <input  type="number" required #items="ngModel" step="1" min="1" name="items" [(ngModel)]="numberOfItems" class="form-control" [value]="numberOfItems">
+                <span class="text-danger d-block" *ngIf="items?.hasError('required')">required</span>
+                <span class="text-danger d-block" *ngIf="items?.hasError('min')">min is 1</span>
+              </div>
+              <div class="input-group-append">
+                <button class="btn btn-primary mr-2" type="submit" [disabled]="myForm.invalid">Add more(+ {{numberOfItems}})</button>
+              </div>
+           </div>
+
           <button class="btn btn-primary rounded text-white" (click)="logout()">Logout</button> 
     
           <!-- cart -->
