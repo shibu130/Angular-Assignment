@@ -4,29 +4,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # How to run the project
 
-### 1.clone the project
-### 2.run npm install to install dependencies
-### 3.run ng serve and go to (http://localhost:4200/dashboard)
-### 4.i havent used karma jasmin before, hence have not added the test cases , i need to figure this out later
+### &nbsp; 1.Clone the project
+### &nbsp; 2.Run npm install to install dependencies
+### &nbsp; 3.Run ng serve and go to (http://localhost:4200/dashboard)
+### &nbsp; 4.I havent used karma jasmin before, hence have not added the test cases , i need to figure this out later
 
 # project structure
 The project contains 2 modules feature and shared , feature contains components , modals , services and etc. while shared has the reusable components
 
 # documentation
 ## 1.optimizations
-change detection strategy - went with default since the application is small , while on push would have been better
-unsubscribing  - after i subscribe to a observable i unsubscribe to it when component is destroyed (ngOnDestroy)
-loops - usage of track by index
-lazy loading of modules - the feature module is lazy loaded 
+change detection strategy - went with default since the application is small , while on push would have been better.
+unsubscribing  - after i subscribe to a observable i unsubscribe to it when component is destroyed (ngOnDestroy).
+loops - usage of track by index.
+lazy loading of modules - the feature module is lazy loaded.
 
-things missed - use of onpush detection strategy , use of pipes, karma jasmin unit test cases 
+things missed - use of onpush detection strategy , use of pipes, karma jasmin unit test cases.
 
 ## 2. challenges
 
-flexbox - its been a while since i created project from scratch , i was trying to bring a header footer and content, so basically header should stay in top , footer in bottom and content should take remaining width
-while welcome and login doesnt do exactly , dashboard i have done in a correct way by making use of flex box , a main div is a flex box and header in top content has a flex-grow 1 which will take remaining width between header and footer , rather than try all concepts out i will check this website about behaviour of flex box properties https://yoksel.github.io/flex-cheatsheet/
+flexbox - its been a while since i created project from scratch , i was trying to bring a header footer and content, so basically header should stay in top , footer in bottom and content should take remaining width.
+while welcome and login doesnt do exactly , dashboard i have done in a correct way by making use of flex box , a main div is a flex box and header in top content has a flex-grow 1 which will take remaining width between header and footer , rather than try all concepts out i will check this website about behaviour of flex box properties https://yoksel.github.io/flex-cheatsheet/.
+The interesting part about flex box is how things change when u change the flex direction.
 
-unit test - i have never done karma jasmin before , due to time constrains i chose to drop it , its not like i abandoned it , but i am ready to learn it
+unit test - i have never done karma jasmin before , due to time constrains i chose to drop it , its not like i abandoned it , but i am ready to learn it.
 
 
 angular material - in my current org i we dont use angular material (this is the first time in 4 years i am using angular material) , but i used angular materials for popups(which contains material inputs, go to list view and click on manage in dashboar) , loading spinner, virtual scrolling (https://material.angular.io/components/categories)
@@ -43,6 +44,8 @@ faker.js - never used it before , but it was nice oppurtunity to make use of it 
 git - i had used another account to push code , as it was configured earlier ( it was a github associcated with my mtech email)
 
 i had missed some things not intentionally , but i think i could have made things more optimized and etc 
+
+bootstrap - i have used bootstrap for grids and ui , while for many other things angular material was used
 
 
 
