@@ -4,10 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # How to run the project
 
-## 1.clone the project
-## 2.run npm install to install dependencies
-## 3.run ng serve and go to (http://localhost:4200/dashboard)
-## 4.i havent used karma jasmin before, hence have not added the test cases , i need to figure this out later
+### 1.clone the project
+### 2.run npm install to install dependencies
+### 3.run ng serve and go to (http://localhost:4200/dashboard)
+### 4.i havent used karma jasmin before, hence have not added the test cases , i need to figure this out later
 
 # project structure
 The project contains 2 modules feature and shared , feature contains components , modals , services and etc. while shared has the reusable components
