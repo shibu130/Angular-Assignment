@@ -41,11 +41,11 @@ services - i have used services , i am aware of it
 
 faker.js - never used it before , but it was nice oppurtunity to make use of it  (https://fakerjs.dev/guide/usage.html). When i visited landing page found so many options where i can create temporary data and hence i dedided to go to the ecommerce data
 
-git - i had used another account to push code , as it was configured earlier ( it was a github associcated with my mtech email)
+git - i had used another account to push code , as it was configured earlier ( it was a github associcated with my mtech email and during mtech there were assignments)
 
 i had missed some things not intentionally , but i think i could have made things more optimized and etc 
 
-bootstrap - i have used bootstrap for grids and ui , while for many other things angular material was used
+bootstrap - i have used bootstrap for grids and ui components as i have better hold on it  , while for many other things angular material was used
 
 
 
