@@ -11,7 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Using the App
 
-### 1. once ng serve is done , visit http://localhost:4200/dashboard , you will be taken to welcome page , click on the login
+### 1. once ng serve is done , visit http://localhost:4200/dashboard , you will be taken to welcome page (i had initially planned to bring some animations and text here ) , click on the login
 
 ![image](https://github.com/user-attachments/assets/a86eb4fa-abaa-468b-8daa-5bed046f0ad6)
 
