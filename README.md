@@ -9,6 +9,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### &nbsp; 3.Run ng serve and go to (http://localhost:4200/dashboard)
 ### &nbsp; 4.I havent used karma jasmin before, hence have not added the test cases , need to learn it and add test cases later
 
+# Using the App
+
+### 1. once ng serve is done , visit http://localhost:4200/dashboard , you will be taken to welcome page , click on the login
+
+![image](https://github.com/user-attachments/assets/a86eb4fa-abaa-468b-8daa-5bed046f0ad6)
+
+### 2. once login is clicked u will be redirected to login page
+![image](https://github.com/user-attachments/assets/f7fc791c-7ba5-4ca5-a3da-99771c5d45b7)
+
+### 3. once username and password is entered (username can be any email and password should not be space) validations (required , email for username and required for password ) and once validation passed you will be taken to dashboard 
+![image](https://github.com/user-attachments/assets/02ca93ef-bd50-4819-8bc1-6a476f3019c4)
+
+### 4. in the above image add more is used for to demonestrate debounce (validatione exists there) 
+
+### 5. clicking on manage will open a popup to edit product details (angular material is used here)
+
+![image](https://github.com/user-attachments/assets/06d53c79-3f4a-4127-98e9-5039fab759fe)
+
+### 6. clicking list will open a page demonestrating the virtual scroll
+![image](https://github.com/user-attachments/assets/4f73bf79-83be-4b70-938b-d733dfe141e3)
+
+### 7. logout will clear local storage and will redirect you to login page
+
+
 # project structure
 The project contains 2 modules feature and shared , feature contains components , modals , services and etc. while shared has the reusable components
 
