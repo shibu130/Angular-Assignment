@@ -74,6 +74,6 @@ bootstrap - i have used bootstrap for grids and ui components as i have better h
 
 
 
-
+fix : bootstrap 4 tooltip wont work until we use a jquery code snipped as per the documentation
 
 
